@@ -12,17 +12,19 @@ import java.util.Scanner;
  * @author Lorenzo
  */
 
+//classe menu che serve per creare un pannello iniziale quando si avvia il codice e permette di scegliere delle opzioni semplicemente inserendo un numero
+//corrispondente all'azione che si vuole fare per es: se voglio uscire dal programma devo inserire il numero 0 e mi fa fare l'azione di uscire dal codice ecc...
+
     public class Menu
 {
-  private String[] elencoVoci;
-  private int numeroVoci;
+  private final String[] elencoVoci;
+  private final int numeroVoci;
   
   public Menu(String [] elencoVoci)
   {
       numeroVoci=elencoVoci.length;
       this.elencoVoci=new String[numeroVoci];
-      for(int i=0;i<numeroVoci;i++)
-      this.elencoVoci[i]=elencoVoci[i];
+      System.arraycopy(elencoVoci, 0, this.elencoVoci, 0, numeroVoci);
 
   }
   
